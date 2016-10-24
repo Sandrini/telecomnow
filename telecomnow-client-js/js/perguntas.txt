@@ -1,0 +1,598 @@
+﻿(1º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOsimCHATsimGRAVACAOsimCELULARsim= Projeto5
+
+********************************************************************************
+(2º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOsimCHATsimGRAVACAOsimCELULARnao= Projeto6
+
+********************************************************************************
+(3º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOsimCHATsimGRAVACAOnaoCELULARsim= Projeto7
+
+*******************************************************************************
+(4º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOsimCHATsimGRAVACAOnaoCELULARnao= Projeto8
+
+*******************************************************************************
+(5º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOsimCHATnaoGRAVACAOsimCELULARsim= Projeto19
+
+*******************************************************************************
+(6º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOsimCHATnaoGRAVACAOsimCELULARnao= Projeto20
+
+*******************************************************************************
+(7º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOsimCHATnaoGRAVACAOnaoCELULARsim= Projeto21
+*******************************************************************************
+(8º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOsimCHATnaoGRAVACAOnaoCELULARnao= Projeto22
+*******************************************************************************
+(9º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATsimGRAVACAOsimCELULARsim= Projeto15
+
+*******************************************************************************
+(10º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATsimGRAVACAOsimCELULARnao= Projeto18
+*******************************************************************************
+(11º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATsimGRAVACAOnaoCELULARsim= Projeto14
+*******************************************************************************
+(12º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATsimGRAVACAOnaoCELULARnao= Projeto11
+
+*******************************************************************************
+(13º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATnaoGRAVACAOsimCELULARsim= Projeto16
+*******************************************************************************
+(14º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATnaoGRAVACAOsimCELULARnao= Projeto17
+*******************************************************************************
+
+(15º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATnaoGRAVACAOnaoCELULARsim= Projeto13
+*******************************************************************************
+
+(16º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATnaoGRAVACAOnaoCELULARnao= Projeto12
+
+*******************************************************************************
+
+(17º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento? nao
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOnaoCELULARsim= Projeto9
+
+*******************************************************************************
+
+(18º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEsimTELEATENDIMENTOnaoCELULARnao= Projeto10
+
+*******************************************************************************
+
+(19º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOsimCHATsimGRAVACAOsimCELULARsim= Projeto29
+
+
+*******************************************************************************
+
+(20º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOsimCHATsimGRAVACAOsimCELULARnao= Projeto28
+
+*******************************************************************************
+
+(20º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOsimCHATsimGRAVACAOnaoCELULARsim= Projeto32
+
+*******************************************************************************
+
+(21º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOsimCHATsimGRAVACAOnaoCELULARnao= Projeto34
+
+*******************************************************************************
+
+(22º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOsimCHATnaoGRAVACAOsimCELULARsim= Projeto30
+*******************************************************************************
+
+(23º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOsimCHATnaoGRAVACAOsimCELULARnao= Projeto27
+*******************************************************************************
+
+(24º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOsimCHATnaoGRAVACAOnaoCELULARsim= Projeto31
+
+*******************************************************************************
+
+(25º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOsimCHATnaoGRAVACAOnaoCELULARnao= Projeto33
+
+*******************************************************************************
+
+(26º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATsimGRAVACAOsimCELULARsim= Projeto35
+
+*******************************************************************************
+
+(27º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATsimGRAVACAOsimCELULARnao= Projeto25
+
+*******************************************************************************
+
+(28º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATsimGRAVACAOnaoCELULARsim= Projeto3
+
+*******************************************************************************
+
+(29º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATsimGRAVACAOnaoCELULARnao= Projeto24
+
+*******************************************************************************
+
+(30º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATnaoGRAVACAOsimCELULARsim= Projeto36
+
+*******************************************************************************
+
+(31º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATnaoGRAVACAOsimCELULARnao= Projeto26
+*******************************************************************************
+
+(32º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATnaoGRAVACAOnaoCELULARsim= Projeto4
+*******************************************************************************
+
+(33º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+TELEINTEGRACAO) Com integração no sistema de Gestão?
+
+CHAT) Com atendimento via chat?
+	
+GRAVACAO) Com gravação dos atendimentos?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOsimTELEINTEGRACAOnaoCHATnaoGRAVACAOnaoCELULARnao= Projeto2
+
+*******************************************************************************
+
+(34º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOnaoCELULARsim= Projeto23
+
+*******************************************************************************
+
+(35º opção)ok
+UNIDADE) Com filial? 
+
+TELEATENDIMENTO) Com Teleatendimento?
+
+CELULAR) Com inteface celular?
+
+
+UNIDADEnaoTELEATENDIMENTOnaoCELULARnao= Projeto1
