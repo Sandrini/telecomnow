@@ -1,2 +1,0 @@
-# Como realizar um Cross com Srping boot
-https://spring.io/guides/gs/rest-service-cors/
