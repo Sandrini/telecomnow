@@ -1,9 +1,9 @@
 package br.com.telecomnow.controler;
 
 import br.com.telecomnow.model.Pergunta;
-import br.com.telecomnow.model.Resposta;
+import br.com.telecomnow.model.ComponenteRegiao;
 import br.com.telecomnow.repository.Perguntas;
-import br.com.telecomnow.repository.RepostaRepository;
+import br.com.telecomnow.repository.ComponentePorRegiaoRepository;
 import com.googlecode.charts4j.Color;
 import com.googlecode.charts4j.GCharts;
 import com.googlecode.charts4j.PieChart;
@@ -21,7 +21,7 @@ import java.util.List;
 public class GraficoController {
 
     @Autowired
-    private RepostaRepository repostaRepository;
+    private ComponentePorRegiaoRepository repostaRepository;
 
     @Autowired
     private Perguntas perguntas;
@@ -29,20 +29,19 @@ public class GraficoController {
 
     @RequestMapping(value = "/grafico")
     public String grafico(Model model) {
-
-       List<String> graficos = new ArrayList<>();
-        for (Pergunta pergunta : perguntas.buscarTodasAsPerguntas()) {
-            List<Slice> fatias = new ArrayList<>();
-            for (Resposta resposta : repostaRepository.buscarRespostaPorPergunta(pergunta)) {
-                fatias.add(Slice.newSlice(resposta.getContador().intValue(), null, resposta.getRegiao(), pergunta.getMensagem()));
-            }
-            PieChart pieChart = GCharts.newPieChart(fatias);
-            pieChart.setTitle("Respostas por região", Color.BLACK, 18);
-            pieChart.setSize(420, 180);
-            pieChart.setThreeD(false);
-            graficos.add(pieChart.toURLString());
-        }
-        model.addAttribute("graficosUrls", graficos);
+//       List<String> graficos = new ArrayList<>();
+//        for (Pergunta pergunta : perguntas.buscarTodasAsPerguntas()) {
+//            List<Slice> fatias = new ArrayList<>();
+//            for (ComponenteRegiao resposta : repostaRepository.buscarRespostaPorPergunta(pergunta)) {
+//                fatias.add(Slice.newSlice(resposta.getContador().intValue(), null, resposta.getRegiao(), pergunta.getMensagem()));
+//            }
+//            PieChart pieChart = GCharts.newPieChart(fatias);
+//            pieChart.setTitle("Respostas por região", Color.BLACK, 18);
+//            pieChart.setSize(420, 180);
+//            pieChart.setThreeD(false);
+//            graficos.add(pieChart.toURLString());
+//        }
+//        model.addAttribute("graficosUrls", graficos);
         return "grafico";
     }
 }
