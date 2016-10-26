@@ -1,30 +1,48 @@
 package br.com.telecomnow.controler;
 
+import br.com.telecomnow.model.Pergunta;
+import br.com.telecomnow.model.Resposta;
+import br.com.telecomnow.repository.Perguntas;
+import br.com.telecomnow.repository.RepostaRepository;
 import com.googlecode.charts4j.Color;
 import com.googlecode.charts4j.GCharts;
 import com.googlecode.charts4j.PieChart;
 import com.googlecode.charts4j.Slice;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 @Controller
 public class GraficoController {
 
+    @Autowired
+    private RepostaRepository repostaRepository;
+
+    @Autowired
+    private Perguntas perguntas;
+
+
     @RequestMapping(value = "/grafico")
     public String grafico(Model model) {
-        Slice s1 = Slice.newSlice(15, Color.newColor("CACACA"), "RS", "Rio Grande do Sul");
-        Slice s2 = Slice.newSlice(50, Color.newColor("DF7417"), "RJ", "Rio de Janeiro");
-        Slice s3 = Slice.newSlice(25, Color.newColor("951800"), "MG", "Minas Gerais");
-        Slice s4 = Slice.newSlice(10, Color.newColor("01A1DB"), "SP", "São Paulo");
 
-        PieChart pieChart = GCharts.newPieChart(s1, s2, s3, s4);
-        pieChart.setTitle("Regiões com maior demanda de Aplicativos", Color.BLACK, 24);
-        pieChart.setSize(720, 360);
-        pieChart.setThreeD(false);
-
-        model.addAttribute("pieUrl", pieChart.toURLString());
-
+       List<String> graficos = new ArrayList<>();
+        for (Pergunta pergunta : perguntas.buscarTodasAsPerguntas()) {
+            List<Slice> fatias = new ArrayList<>();
+            for (Resposta resposta : repostaRepository.buscarRespostaPorPergunta(pergunta)) {
+                fatias.add(Slice.newSlice(resposta.getContador().intValue(), null, resposta.getRegiao(), pergunta.getMensagem()));
+            }
+            PieChart pieChart = GCharts.newPieChart(fatias);
+            pieChart.setTitle("Respostas por região", Color.BLACK, 18);
+            pieChart.setSize(420, 180);
+            pieChart.setThreeD(false);
+            graficos.add(pieChart.toURLString());
+        }
+        model.addAttribute("graficosUrls", graficos);
         return "grafico";
     }
 }

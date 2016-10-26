@@ -1,5 +1,6 @@
 package br.com.telecomnow.repository;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,6 +24,11 @@ public class PerguntasEmMemoria implements Perguntas {
 							perguntaEnum.getMensagem()
 							));
 		}
+	}
+
+	@Override
+	public Collection<Pergunta> buscarTodasAsPerguntas() {
+		return perguntasPorIdentificador.values();
 	}
 
 	@Override
