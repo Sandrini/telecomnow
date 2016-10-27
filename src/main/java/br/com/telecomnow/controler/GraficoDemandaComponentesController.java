@@ -27,24 +27,23 @@ public class GraficoDemandaComponentesController {
     }
 
     private String gera() {
-        BarChartPlot team1=Plots.newBarChartPlot(Data.newData(25,43,12,30),Color.BLUEVIOLET,"Team A");
-        BarChartPlot team2=Plots.newBarChartPlot(Data.newData(8,35,11,5),Color.ORANGERED,"Team B");
-        BarChartPlot team3=Plots.newBarChartPlot(Data.newData(10,20,30,30),Color.LIMEGREEN,"Team C");
-        BarChart chart=GCharts.newBarChart(team1,team2,team3);
+        BarChartPlot team1=Plots.newBarChartPlot(Data.newData(25,43,12,30),Color.RED,"SEM ADERENCIA");
+        BarChartPlot team2=Plots.newBarChartPlot(Data.newData(8,35,11,5),Color.GREEN,"COM ADERENCIA");
+        BarChart chart=GCharts.newBarChart(team1,team2);
         AxisStyle axisStyle=AxisStyle.newAxisStyle(Color.BLACK,13,AxisTextAlignment.CENTER);
-        AxisLabels score=AxisLabelsFactory.newAxisLabels("Score",50.0);
+        AxisLabels score=AxisLabelsFactory.newAxisLabels("Solicitações",50.0);
         score.setAxisStyle(axisStyle);
-        AxisLabels year=AxisLabelsFactory.newAxisLabels("Year",50.0);
+        AxisLabels year=AxisLabelsFactory.newAxisLabels("Componentes",50.0);
         year.setAxisStyle(axisStyle);
-        chart.addXAxisLabels(AxisLabelsFactory.newAxisLabels("2002","2003","2004","2005"));
+        chart.addXAxisLabels(AxisLabelsFactory.newAxisLabels("CHAT","CELULAR","GRAVACAO","TELEINTEGRACAO"));
         chart.addYAxisLabels(AxisLabelsFactory.newNumericRangeAxisLabels(0,100));
         chart.addYAxisLabels(score);
         chart.addXAxisLabels(year);
-        chart.setSize(600,450);
+        chart.setSize(700,350);
         chart.setBarWidth(100);
         chart.setSpaceWithinGroupsOfBars(20);
         chart.setDataStacked(true);
-        chart.setTitle("Team Scores",Color.BLACK,16);
+        chart.setTitle("Demandas de componentes",Color.BLACK,16);
         chart.setGrid(100,10,3,2);
         chart.setBackgroundFill(Fills.newSolidFill(Color.ALICEBLUE));
         LinearGradientFill fill=Fills.newLinearGradientFill(0,Color.LAVENDER,100);
