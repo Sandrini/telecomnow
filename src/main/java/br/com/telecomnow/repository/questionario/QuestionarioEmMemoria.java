@@ -15,12 +15,15 @@ import br.com.telecomnow.model.Pergunta;
 @Repository
 public class QuestionarioEmMemoria implements QuestionarioRepository {
 
+	@Autowired
+	private ComponentePorRegiaoRepository repostaRepository;
+
 	private Map<String, Pergunta> perguntasPorIdentificador;
 
 	private StringBuffer respostasBuffer;
 
 	private String regiao;
-	
+
 	public QuestionarioEmMemoria() {
 		regiao = "RS";
 		respostasBuffer = new StringBuffer();
@@ -54,6 +57,7 @@ public class QuestionarioEmMemoria implements QuestionarioRepository {
 				.append(pergunta.getIdentificador())
 				.append("+");
 		}
+		repostaRepository.incrementarComponente(pergunta.getIdentificador(), regiao, aderente);
 	}
 
 	@Override

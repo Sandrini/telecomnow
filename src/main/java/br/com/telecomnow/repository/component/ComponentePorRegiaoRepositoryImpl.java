@@ -18,8 +18,7 @@ public class ComponentePorRegiaoRepositoryImpl implements ComponentePorRegiaoRep
 
     private Map<String, ComponenteRegiao> componentesPorRegiaoMap = new HashMap<>();
 
-    @Autowired
-    public ComponentePorRegiaoRepositoryImpl(QuestionarioRepository perguntas) {
+    public ComponentePorRegiaoRepositoryImpl() {
         new GeradorDeDadosDeComponentesPorRegiao(componentesPorRegiaoMap).adicionarComponentesParaTodasAsRegioes();
     }
 
@@ -34,6 +33,9 @@ public class ComponentePorRegiaoRepositoryImpl implements ComponentePorRegiaoRep
             componenteRegiao.setQuatidadeAderente(aderente ? 1L : 0L);
             componenteRegiao.setQuatidadeNaoAderente(!aderente ? 1L : 0L);
             componentesPorRegiaoMap.put(chave, componenteRegiao);
+        } else {
+            componenteRegiao.setQuatidadeAderente(aderente ? componenteRegiao.getQuatidadeAderente()+1 : componenteRegiao.getQuatidadeAderente());
+            componenteRegiao.setQuatidadeNaoAderente(!aderente ? componenteRegiao.getQuatidadeNaoAderente()+1 : componenteRegiao.getQuatidadeNaoAderente());
         }
     }
 
