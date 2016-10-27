@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.telecomnow.model.Pergunta;
-import br.com.telecomnow.repository.QuestionarioRepository;
+import br.com.telecomnow.repository.questionario.QuestionarioRepository;
 
 @Controller
 public class QuestionarioController {
