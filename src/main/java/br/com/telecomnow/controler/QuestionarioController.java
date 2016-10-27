@@ -1,5 +1,7 @@
 package br.com.telecomnow.controler;
 
+import br.com.telecomnow.repository.component.ComponentePorRegiaoRepository;
+import br.com.telecomnow.repository.empresavendedora.EmpresaVendedoraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +17,12 @@ public class QuestionarioController {
 
 	@Autowired
 	private QuestionarioRepository questionarioRepository;
-	
+
+	@Autowired
+	private EmpresaVendedoraRepository empresaVendedoraRepository;
+
+
+
 	private Pergunta pergunta;
 	
     @GetMapping("/questionario")
@@ -33,6 +40,7 @@ public class QuestionarioController {
     		model.addAttribute("pergunta", pergunta);
     		return "questionario";
     	} else {
+			model.addAttribute("empresasVendedoras", empresaVendedoraRepository.sortearEmpresas());
     		model.addAttribute("imagemPath", questionarioRepository.buscarImagemDoProjeto());
     		return "projeto";
     	}
