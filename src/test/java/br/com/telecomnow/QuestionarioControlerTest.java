@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import br.com.telecomnow.controler.QuestionarioController;
 import br.com.telecomnow.model.Pergunta;
-import br.com.telecomnow.repository.Perguntas;
+import br.com.telecomnow.repository.QuestionarioRepository;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(QuestionarioController.class)
@@ -28,7 +28,7 @@ public class QuestionarioControlerTest {
     private MockMvc mvc;
 	
 	@MockBean
-	private Perguntas perguntas;
+	private QuestionarioRepository perguntas;
 	
 	@Before
 	public void setUp() throws Exception {

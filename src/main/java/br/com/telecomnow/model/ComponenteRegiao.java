@@ -1,46 +1,49 @@
 package br.com.telecomnow.model;
 
-/**
- * Created by Leonardo on 25/10/2016.
- */
 public class ComponenteRegiao {
 
-    private String componente;
-    private String regiao;
-    private Long quatidadeAderente;
-    private Long quatidadeNaoAderente;
+	private String componente;
 
-    public void setComponente(String componente) {
-        this.componente = componente;
-    }
+	private String regiao;
 
-    public void setRegiao(String regiao) {
-        this.regiao = regiao;
-    }
+	private Long quatidadeAderente;
 
-    public void setQuatidadeAderente(Long quatidadeAderente) {
-        this.quatidadeAderente = quatidadeAderente;
-    }
+	private Long quatidadeNaoAderente;
 
-    public void setQuatidadeNaoAderente(Long quatidadeNaoAderente) {
-        this.quatidadeNaoAderente = quatidadeNaoAderente;
-    }
+	public void setComponente(String componente) {
+		this.componente = componente;
+	}
 
-    public String getComponente() {
-        return componente;
-    }
+	public void setRegiao(String regiao) {
+		this.regiao = regiao;
+	}
 
-    public String getRegiao() {
-        return regiao;
-    }
+	public void setQuatidadeAderente(Long quatidadeAderente) {
+		this.quatidadeAderente = quatidadeAderente;
+	}
 
-    public Long getQuatidadeAderente() {
-        return quatidadeAderente;
-    }
+	public void setQuatidadeNaoAderente(Long quatidadeNaoAderente) {
+		this.quatidadeNaoAderente = quatidadeNaoAderente;
+	}
 
-    public Long getQuatidadeNaoAderente() {
-        return quatidadeNaoAderente;
-    }
+	public String getComponente() {
+		return componente;
+	}
 
+	public String getRegiao() {
+		return regiao;
+	}
+
+	public Long getQuatidadeAderente() {
+		return quatidadeAderente;
+	}
+
+	public Long getQuatidadeNaoAderente() {
+		return quatidadeNaoAderente;
+	}
+
+	public String gerarChave() {
+		return getComponente() + getRegiao();
+	}
 
 }

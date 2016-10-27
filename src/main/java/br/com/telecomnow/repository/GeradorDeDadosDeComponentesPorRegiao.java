@@ -1,15 +1,11 @@
 package br.com.telecomnow.repository;
 
-import br.com.telecomnow.model.ComponenteRegiao;
-import br.com.telecomnow.model.RegiaoEnum;
-
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-/**
- * Created by Leonardo on 26/10/2016.
- */
+import br.com.telecomnow.model.ComponenteRegiao;
+import br.com.telecomnow.model.RegiaoEnum;
+
 class GeradorDeDadosDeComponentesPorRegiao {
 
     private Map<String, ComponenteRegiao> componentesPorRegiaoMap;
@@ -37,11 +33,7 @@ class GeradorDeDadosDeComponentesPorRegiao {
         componente.setRegiao(regiao);
         componente.setQuatidadeAderente(aderente);
         componente.setQuatidadeNaoAderente(naoAderente);
-        componentesPorRegiaoMap.put(gerarChave(componente), componente);
-    }
-
-    private String gerarChave(ComponenteRegiao filialRJ) {
-        return filialRJ.getComponente() + filialRJ.getRegiao();
+        componentesPorRegiaoMap.put(componente.gerarChave(), componente);
     }
 
 }

@@ -9,11 +9,14 @@ import org.springframework.stereotype.Repository;
 import br.com.telecomnow.model.Pergunta;
 
 @Repository
-public class PerguntasEmMemoria implements Perguntas {
+public class QuestionarioEmMemoria implements QuestionarioRepository {
 
 	private Map<String, Pergunta> perguntasPorIdentificador;
 
-	public PerguntasEmMemoria() {
+	private StringBuffer respostasBuffer;
+	
+	public QuestionarioEmMemoria() {
+		respostasBuffer = new StringBuffer();
 		perguntasPorIdentificador = new HashMap<>();
 
 		for (PerguntasEnum perguntaEnum : PerguntasEnum.values()) {
@@ -34,6 +37,21 @@ public class PerguntasEmMemoria implements Perguntas {
 	@Override
 	public Pergunta buscarPergunta(String identificador) {
 		return perguntasPorIdentificador.get(identificador);
+	}
+
+	@Override
+	public void armazenarRespostaParaPergunta(String resposta, Pergunta pergunta) {
+		if ("sim".equals(resposta)) {
+			respostasBuffer
+				.append(pergunta.getIdentificador())
+				.append("+");
+		}
+	}
+
+	@Override
+	public String buscarImagemDoProjeto() {
+		String identificador = respostasBuffer.toString();
+		return ImagensDosProjetos.paraIdentificador(identificador).getPaths();
 	}
 
 }

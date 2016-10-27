@@ -41,4 +41,8 @@ public class Pergunta {
 		this.mensagem = mensagem;
 	}
 
+	public boolean possuiProximaPergunta() {
+		return proxima != null && !proxima.isEmpty();
+	}
+
 }

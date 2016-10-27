@@ -8,16 +8,13 @@ import org.springframework.stereotype.Repository;
 
 import br.com.telecomnow.model.ComponenteRegiao;
 
-/**
- * Created by Leonardo on 25/10/2016.
- */
 @Repository
 public class ComponentePorRegiaoRepositoryImpl implements ComponentePorRegiaoRepository {
 
     private Map<String, ComponenteRegiao> componentesPorRegiaoMap = new HashMap<>();
 
     @Autowired
-    public ComponentePorRegiaoRepositoryImpl(Perguntas perguntas) {
+    public ComponentePorRegiaoRepositoryImpl(QuestionarioRepository perguntas) {
         new GeradorDeDadosDeComponentesPorRegiao(componentesPorRegiaoMap).adicionarComponentesParaTodasAsRegioes();
     }
 

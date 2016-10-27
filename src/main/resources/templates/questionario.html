@@ -31,18 +31,10 @@
 				
 				<form action="#" th:action="@{/questionario}" th:object="${pergunta}" method="post">
 					<div th:id="${pergunta.identificador}" data-th-attr="next=${pergunta.proxima}" class="pergunta" th:text="${pergunta.mensagem}" ></div>
-					<input type="hidden" th:field="*{identificador}"  />
-					<input type="hidden" th:field="*{proxima}" />
-					<input type="hidden" th:field="*{mensagem}" />
 					<div>
-						<button type="submit" name="nao" class="btn pull-right"
-                			th:value="nao" th:text="N&atilde;o"></button>
-                			
+						<button type="submit" name="resposta" class="btn pull-left" value="nao">N&atilde;o</button>
 						<a id="back" href="index.html" class="btn hidden">Refazer</a>
-						
-						<button type="submit" name="sim" class="btn pull-right"
-                			th:value="sim" th:text="Sim"></button>
-						
+						<button type="submit" name="resposta" class="btn pull-right" value="sim">Sim</button>
 					</div>
 				</form>
 				

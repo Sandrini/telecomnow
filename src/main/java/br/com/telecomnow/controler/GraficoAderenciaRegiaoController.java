@@ -1,7 +1,7 @@
 package br.com.telecomnow.controler;
 
 import br.com.telecomnow.model.ComponenteRegiao;
-import br.com.telecomnow.repository.Perguntas;
+import br.com.telecomnow.repository.QuestionarioRepository;
 import br.com.telecomnow.repository.ComponentePorRegiaoRepository;
 import br.com.telecomnow.repository.PerguntasEnum;
 import com.googlecode.charts4j.Color;
@@ -24,8 +24,7 @@ public class GraficoAderenciaRegiaoController {
     private ComponentePorRegiaoRepository repostaRepository;
 
     @Autowired
-    private Perguntas perguntas;
-
+    private QuestionarioRepository perguntas;
 
     @RequestMapping(value = "/graficoAderenciaRegiao")
     public String grafico(Model model) {

@@ -1,15 +1,17 @@
 package br.com.telecomnow.controler;
 
-import br.com.telecomnow.repository.ComponentePorRegiaoRepository;
-import br.com.telecomnow.repository.PerguntasEnum;
-import com.googlecode.charts4j.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.googlecode.charts4j.*;
+
+import br.com.telecomnow.repository.ComponentePorRegiaoRepository;
+import br.com.telecomnow.repository.PerguntasEnum;
 
 @Controller
 public class GraficoDemandaComponentesController {
