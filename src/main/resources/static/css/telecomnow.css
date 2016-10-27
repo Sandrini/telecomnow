@@ -71,6 +71,12 @@ a {
 	background-color: rgba(36, 36, 36, 0.8);
 }
 
+.grafico {
+    padding: 35px 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .form-wrapper {
 	margin: 0 auto;
 	max-width: 750px;

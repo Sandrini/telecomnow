@@ -9,39 +9,38 @@ public class ComponenteRegiao {
     private String regiao;
     private Long quatidadeAderente;
     private Long quatidadeNaoAderente;
-    
+
     public void setComponente(String componente) {
-		this.componente = componente;
-	}
-    
+        this.componente = componente;
+    }
+
     public void setRegiao(String regiao) {
-		this.regiao = regiao;
-	}
-    
+        this.regiao = regiao;
+    }
+
     public void setQuatidadeAderente(Long quatidadeAderente) {
-		this.quatidadeAderente = quatidadeAderente;
-	}
-    
+        this.quatidadeAderente = quatidadeAderente;
+    }
+
     public void setQuatidadeNaoAderente(Long quatidadeNaoAderente) {
-		this.quatidadeNaoAderente = quatidadeNaoAderente;
-	}
+        this.quatidadeNaoAderente = quatidadeNaoAderente;
+    }
 
-	public String getComponente() {
-		return componente;
-	}
+    public String getComponente() {
+        return componente;
+    }
 
-	public String getRegiao() {
-		return regiao;
-	}
+    public String getRegiao() {
+        return regiao;
+    }
 
-	public Long getQuatidadeAderente() {
-		return quatidadeAderente;
-	}
+    public Long getQuatidadeAderente() {
+        return quatidadeAderente;
+    }
 
-	public Long getQuatidadeNaoAderente() {
-		return quatidadeNaoAderente;
-	}
-    
-    
+    public Long getQuatidadeNaoAderente() {
+        return quatidadeNaoAderente;
+    }
+
 
 }

@@ -11,4 +11,8 @@ import java.util.Collection;
 public interface ComponentePorRegiaoRepository {
 
 	void incrementarComponente(String componente, String regiao, boolean aderente);
+
+    Collection<ComponenteRegiao> buscarRegioesPorComponente(String componente);
+
+    Long somarAderencia(String componente);
 }

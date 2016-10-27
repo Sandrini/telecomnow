@@ -23,7 +23,7 @@
 		<div class="plano-fundo">
 			<div class="form-wrapper">
 
-				<div  th:each="graficoUrl : ${graficosUrls}">
+				<div  th:each="graficoUrl : ${graficosUrls}" class="grafico">
 					<img alt="Google Pie Chart" th:src="${graficoUrl}" />
 				</div>
 
