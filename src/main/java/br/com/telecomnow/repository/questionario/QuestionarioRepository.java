@@ -1,4 +1,4 @@
-package br.com.telecomnow.repository;
+package br.com.telecomnow.repository.questionario;
 
 import java.util.Collection;
 

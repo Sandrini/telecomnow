@@ -1,7 +1,8 @@
-package br.com.telecomnow.repository;
+package br.com.telecomnow.repository.component;
 
 import br.com.telecomnow.model.Pergunta;
 import br.com.telecomnow.model.ComponenteRegiao;
+import br.com.telecomnow.model.SomaAderencias;
 
 import java.util.Collection;
 
@@ -14,5 +15,5 @@ public interface ComponentePorRegiaoRepository {
 
     Collection<ComponenteRegiao> buscarRegioesPorComponente(String componente);
 
-    Long somarAderencia(String componente);
+    SomaAderencias somarAderencias(String componente);
 }

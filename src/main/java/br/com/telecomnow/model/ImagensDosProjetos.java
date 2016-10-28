@@ -1,4 +1,4 @@
-package br.com.telecomnow.repository;
+package br.com.telecomnow.model;
 
 import static java.util.Arrays.stream;
 

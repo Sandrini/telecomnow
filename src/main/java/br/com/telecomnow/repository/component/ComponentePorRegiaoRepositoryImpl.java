@@ -1,20 +1,24 @@
-package br.com.telecomnow.repository;
+package br.com.telecomnow.repository.component;
 
-import java.util.*;
-import java.util.stream.Collectors;
-
+import br.com.telecomnow.geradordados.GeradorDeDadosDeComponentesPorRegiao;
+import br.com.telecomnow.model.ComponenteRegiao;
+import br.com.telecomnow.model.SomaAderencias;
+import br.com.telecomnow.repository.questionario.QuestionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import br.com.telecomnow.model.ComponenteRegiao;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Repository
 public class ComponentePorRegiaoRepositoryImpl implements ComponentePorRegiaoRepository {
 
     private Map<String, ComponenteRegiao> componentesPorRegiaoMap = new HashMap<>();
 
-    @Autowired
-    public ComponentePorRegiaoRepositoryImpl(QuestionarioRepository perguntas) {
+    public ComponentePorRegiaoRepositoryImpl() {
         new GeradorDeDadosDeComponentesPorRegiao(componentesPorRegiaoMap).adicionarComponentesParaTodasAsRegioes();
     }
 
@@ -29,6 +33,9 @@ public class ComponentePorRegiaoRepositoryImpl implements ComponentePorRegiaoRep
             componenteRegiao.setQuatidadeAderente(aderente ? 1L : 0L);
             componenteRegiao.setQuatidadeNaoAderente(!aderente ? 1L : 0L);
             componentesPorRegiaoMap.put(chave, componenteRegiao);
+        } else {
+            componenteRegiao.setQuatidadeAderente(aderente ? componenteRegiao.getQuatidadeAderente()+1 : componenteRegiao.getQuatidadeAderente());
+            componenteRegiao.setQuatidadeNaoAderente(!aderente ? componenteRegiao.getQuatidadeNaoAderente()+1 : componenteRegiao.getQuatidadeNaoAderente());
         }
     }
 
@@ -40,13 +47,15 @@ public class ComponentePorRegiaoRepositoryImpl implements ComponentePorRegiaoRep
     }
 
     @Override
-    public Long somarAderencia(String componente) {
-        Long soma = Long.valueOf(0);
+    public SomaAderencias somarAderencias(String componente) {
+        Long somaAderencia = Long.valueOf(0);
+        Long somaNaoAderencia = Long.valueOf(0);
         for (ComponenteRegiao componenteRegiao : componentesPorRegiaoMap.values()) {
             if (componenteRegiao.getComponente().equals(componente)) {
-                soma+=componenteRegiao.getQuatidadeAderente();
+                somaAderencia+=componenteRegiao.getQuatidadeAderente();
+                somaNaoAderencia+=componenteRegiao.getQuatidadeNaoAderente();
             }
         }
-        return soma;
+        return new SomaAderencias(somaAderencia, somaNaoAderencia);
     }
 }
