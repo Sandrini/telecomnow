@@ -28,17 +28,19 @@
 
 				<!-- Cada elemento possui o id da pergunta atual e o id da proxima pergunta -->
 				<!-- Pergunta inicial exibida -->
-				<div>
-					<a id="back" href="/pergunta" class="btn">Refazer</a>
-				</div>
 				
-				<!-- Bloco de imagens com os projetos finais -->
-				<div class="projeto-final" >
-					<img th:src="${imagemPath}" border="0" /> 
+				<form action="#" th:action="@{/regiao}" method="post">
+					<div class="pergunta" th:text="${pergunta}"></div>
+					<select name="regiao">
+					  <option th:each="regiao : ${regioes}" 
+					          th:value="${regiao}" 
+					          th:text="${regiao.name()}"></option>
+					</select>
 					<div>
-						<a th:href="${imagemPath}" onclick="downloadImg(this)" >Clique para baixar o projeto</a>
+						<button type="submit" name="resposta" class="btn">Enviar</button>
 					</div>
-				</div>
+				</form>
+
 			</div>
 		</div>
 	</div>

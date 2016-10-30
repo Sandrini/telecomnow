@@ -1,11 +1,15 @@
 package br.com.telecomnow.repository.questionario;
 
+import static br.com.telecomnow.model.PerguntasEnum.CELULAR;
+import static br.com.telecomnow.model.PerguntasEnum.TELEINTEGRACAO;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 import br.com.telecomnow.model.ImagensDosProjetos;
 import br.com.telecomnow.model.PerguntasEnum;
+import br.com.telecomnow.model.RegiaoEnum;
 import br.com.telecomnow.repository.component.ComponentePorRegiaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -22,10 +26,9 @@ public class QuestionarioEmMemoria implements QuestionarioRepository {
 
 	private StringBuffer respostasBuffer;
 
-	private String regiao;
+	private RegiaoEnum regiao;
 
 	public QuestionarioEmMemoria() {
-		regiao = "RS";
 		respostasBuffer = new StringBuffer();
 		perguntasPorIdentificador = new HashMap<>();
 
@@ -50,20 +53,33 @@ public class QuestionarioEmMemoria implements QuestionarioRepository {
 	}
 
 	@Override
-	public void armazenarRespostaParaPergunta(String resposta, Pergunta pergunta) {
+	public void definirRegiao(RegiaoEnum regiao) {
+		this.regiao = regiao;
+	}
+
+	@Override
+	public Pergunta armazenarRespostaParaPerguntaERetornarProximaPerguntaSeExistir(String resposta, Pergunta pergunta) {
 		boolean aderente = "sim".equals(resposta);
+		repostaRepository.incrementarComponente(pergunta.getIdentificador(), regiao, aderente);
 		if (aderente) {
 			respostasBuffer
 				.append(pergunta.getIdentificador())
 				.append("+");
 		}
-		repostaRepository.incrementarComponente(pergunta.getIdentificador(), regiao, aderente);
+		if (!aderente && aPerguntaEhTeleintegracao(pergunta)) {
+			return buscarPergunta(CELULAR.getIdentificador());
+		} else{
+			return buscarPergunta(pergunta.getProxima());
+		}
+	}
+
+	private boolean aPerguntaEhTeleintegracao(Pergunta pergunta) {
+		return TELEINTEGRACAO.getIdentificador().equals(pergunta.getIdentificador());
 	}
 
 	@Override
 	public String buscarImagemDoProjeto() {
-		String identificador = respostasBuffer.toString();
-		return ImagensDosProjetos.paraIdentificador(identificador).getPaths();
+		return ImagensDosProjetos.paraIdentificador(respostasBuffer.toString()).getPath();
 	}
 
 }

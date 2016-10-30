@@ -55,7 +55,7 @@ public enum ImagensDosProjetos {
 					.get();
 	}
 
-	public String getPaths() {
+	public String getPath() {
 		return "img/"+name()+".jpg";
 	}
 

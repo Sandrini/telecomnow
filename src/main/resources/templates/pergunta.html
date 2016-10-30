@@ -29,11 +29,10 @@
 				<!-- Cada elemento possui o id da pergunta atual e o id da proxima pergunta -->
 				<!-- Pergunta inicial exibida -->
 				
-				<form action="#" th:action="@{/questionario}" th:object="${pergunta}" method="post">
+				<form action="#" th:action="@{/pergunta}" th:object="${pergunta}" method="post">
 					<div th:id="${pergunta.identificador}" data-th-attr="next=${pergunta.proxima}" class="pergunta" th:text="${pergunta.mensagem}" ></div>
 					<div>
 						<button type="submit" name="resposta" class="btn pull-left" value="nao">N&atilde;o</button>
-						<a id="back" href="index.html" class="btn">Refazer</a>
 						<button type="submit" name="resposta" class="btn pull-right" value="sim">Sim</button>
 					</div>
 				</form>

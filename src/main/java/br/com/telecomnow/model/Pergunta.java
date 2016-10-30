@@ -45,4 +45,9 @@ public class Pergunta {
 		return proxima != null && !proxima.isEmpty();
 	}
 
+	@Override
+	public String toString() {
+		return "Pergunta [" + identificador + "]";
+	}	
+	
 }

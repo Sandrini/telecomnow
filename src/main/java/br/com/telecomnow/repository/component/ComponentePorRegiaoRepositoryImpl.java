@@ -1,17 +1,17 @@
 package br.com.telecomnow.repository.component;
 
-import br.com.telecomnow.geradordados.GeradorDeDadosDeComponentesPorRegiao;
-import br.com.telecomnow.model.ComponenteRegiao;
-import br.com.telecomnow.model.SomaAderencias;
-import br.com.telecomnow.repository.questionario.QuestionarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Repository;
+
+import br.com.telecomnow.geradordados.GeradorDeDadosDeComponentesPorRegiao;
+import br.com.telecomnow.model.ComponenteRegiao;
+import br.com.telecomnow.model.RegiaoEnum;
+import br.com.telecomnow.model.SomaAderencias;
 
 @Repository
 public class ComponentePorRegiaoRepositoryImpl implements ComponentePorRegiaoRepository {
@@ -23,13 +23,17 @@ public class ComponentePorRegiaoRepositoryImpl implements ComponentePorRegiaoRep
     }
 
     @Override
-    public void incrementarComponente(String componente, String regiao, boolean aderente) {
+    public void incrementarComponente(String componente, RegiaoEnum regiao, boolean aderente) {
         String chave = componente + regiao;
+        /*FIXME No java 8 get não retorna null e sim lança uma exception
+        	Use getOrDefault
+        	PS: se tivesse testado isso não conteceria :P
+        */
         ComponenteRegiao componenteRegiao = componentesPorRegiaoMap.get(chave);
         if (componenteRegiao == null) {
             componenteRegiao = new ComponenteRegiao();
             componenteRegiao.setComponente(componente);
-            componenteRegiao.setRegiao(regiao);
+            componenteRegiao.setRegiao(regiao.name());
             componenteRegiao.setQuatidadeAderente(aderente ? 1L : 0L);
             componenteRegiao.setQuatidadeNaoAderente(!aderente ? 1L : 0L);
             componentesPorRegiaoMap.put(chave, componenteRegiao);

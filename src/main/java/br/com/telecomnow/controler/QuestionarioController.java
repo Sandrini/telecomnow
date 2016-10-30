@@ -1,7 +1,5 @@
 package br.com.telecomnow.controler;
 
-import br.com.telecomnow.repository.component.ComponentePorRegiaoRepository;
-import br.com.telecomnow.repository.empresavendedora.EmpresaVendedoraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.telecomnow.model.Pergunta;
+import br.com.telecomnow.model.RegiaoEnum;
+import br.com.telecomnow.repository.empresavendedora.EmpresaVendedoraRepository;
 import br.com.telecomnow.repository.questionario.QuestionarioRepository;
 
 @Controller
@@ -21,27 +21,32 @@ public class QuestionarioController {
 	@Autowired
 	private EmpresaVendedoraRepository empresaVendedoraRepository;
 
-
-
 	private Pergunta pergunta;
 	
     @GetMapping("/questionario")
     public String iniciarQuestionario(Model model) {
-    	pergunta = questionarioRepository.buscarPergunta("UNIDADE");
-    	model.addAttribute("pergunta", pergunta);
-        return "questionario";
+    	model.addAttribute("regioes", RegiaoEnum.values());
+    	model.addAttribute("pergunta", "Em qual região sua empresa se encontra?");
+        return "regiao";
     }
     
-    @PostMapping("/questionario")
+    @PostMapping(path = "/regiao")
+    public String responder(@RequestParam RegiaoEnum regiao, Model model) {
+    	questionarioRepository.definirRegiao(regiao);
+    	pergunta = questionarioRepository.buscarPergunta("UNIDADE");
+		model.addAttribute("pergunta", pergunta);
+    	return "pergunta";
+    }
+
+    @PostMapping("/pergunta")
     public String responder(@RequestParam String resposta, Model model) {
-    	questionarioRepository.armazenarRespostaParaPergunta(resposta, pergunta);
-    	if(pergunta.possuiProximaPergunta()){
-    		pergunta = questionarioRepository.buscarPergunta(pergunta.getProxima());
+    	pergunta = questionarioRepository.armazenarRespostaParaPerguntaERetornarProximaPerguntaSeExistir(resposta, pergunta);
+		if(pergunta != null){
     		model.addAttribute("pergunta", pergunta);
-    		return "questionario";
+    		return "pergunta";
     	} else {
 			model.addAttribute("empresasVendedoras", empresaVendedoraRepository.sortearEmpresas());
-    		model.addAttribute("imagemPath", questionarioRepository.buscarImagemDoProjeto());
+			model.addAttribute("imagemPath", questionarioRepository.buscarImagemDoProjeto());
     		return "projeto";
     	}
     }
