@@ -40,23 +40,31 @@ public enum ImagensDosProjetos {
 	Projeto34("TELEATENDIMENTO+TELEINTEGRACAO+CHAT+"),
 	Projeto35("TELEATENDIMENTO+CHAT+GRAVACAO+CELULAR+"),
 	Projeto36("TELEATENDIMENTO+GRAVACAO+CELULAR+"),
+	NULL();
 	;
 
 	private String identificador;
+
+	private String path;
 	
-	ImagensDosProjetos(String identificador){
+	private ImagensDosProjetos() {
+		identificador = "null";
+	}
+	
+	private ImagensDosProjetos(String identificador){
 		this.identificador = identificador;
+		this.path = "img/"+name()+".jpg";
 	}
 	
 	public static ImagensDosProjetos paraIdentificador(String identificador) {
 		return stream(values())
 					.filter( t -> t.identificador.equals(identificador))
 					.findAny()
-					.get();
+					.orElse(NULL);
 	}
 
 	public String getPath() {
-		return "img/"+name()+".jpg";
+		return path;
 	}
 
 }

@@ -23,6 +23,11 @@ public class QuestionarioController {
 
 	private Pergunta pergunta;
 	
+	@GetMapping({"regiao", "pergunta"})
+	public String atualizarEmOutrasPaginas() {
+		return "redirect:questionario";
+	}
+	
     @GetMapping("/questionario")
     public String iniciarQuestionario(Model model) {
     	model.addAttribute("regioes", RegiaoEnum.values());
@@ -52,3 +57,4 @@ public class QuestionarioController {
     }
 
 }
+	

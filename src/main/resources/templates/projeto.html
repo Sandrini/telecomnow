@@ -26,18 +26,21 @@
 		<div class="plano-fundo">
 			<div class="form-wrapper">
 
-				<!-- Cada elemento possui o id da pergunta atual e o id da proxima pergunta -->
-				<!-- Pergunta inicial exibida -->
-				<div>
-					<a id="back" href="/pergunta" class="btn">Refazer</a>
+				<!-- Bloco de imagens com os projetos finais -->
+				<div class="projeto-final" th:if="${imagemPath == null}">
+					<div>
+						<p>N&atilde;o foi encontrado um projeto com as condi&ccedil;&otilde;es informadas</p>
+					</div>
 				</div>
 				
-				<!-- Bloco de imagens com os projetos finais -->
-				<div class="projeto-final" >
+				<div class="projeto-final" th:unless="${imagemPath == null}">
 					<img th:src="${imagemPath}" border="0" /> 
 					<div>
 						<a th:href="${imagemPath}" onclick="downloadImg(this)" >Clique para baixar o projeto</a>
 					</div>
+				</div>
+				<div style="text-align: center;">
+					<a id="back" href="/questionario" class="btn">Refazer</a>
 				</div>
 			</div>
 		</div>

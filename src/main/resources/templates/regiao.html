@@ -29,14 +29,15 @@
 				<!-- Cada elemento possui o id da pergunta atual e o id da proxima pergunta -->
 				<!-- Pergunta inicial exibida -->
 				
-				<form action="#" th:action="@{/regiao}" method="post">
-					<div class="pergunta" th:text="${pergunta}"></div>
+				<form action="#" th:action="@{/regiao}" method="post" style="text-align: center;">
+					<div class="pergunta" style="text-align: center;" th:text="${pergunta}"></div>
 					<select name="regiao">
-					  <option th:each="regiao : ${regioes}" 
+					  <option 
+					  		  th:each="regiao : ${regioes}" 
 					          th:value="${regiao}" 
 					          th:text="${regiao.name()}"></option>
 					</select>
-					<div>
+					<div style="text-align: center;">
 						<button type="submit" name="resposta" class="btn">Enviar</button>
 					</div>
 				</form>
