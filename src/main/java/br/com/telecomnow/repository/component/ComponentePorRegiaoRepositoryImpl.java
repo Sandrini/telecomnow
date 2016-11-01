@@ -25,22 +25,19 @@ public class ComponentePorRegiaoRepositoryImpl implements ComponentePorRegiaoRep
     @Override
     public void incrementarComponente(String componente, RegiaoEnum regiao, boolean aderente) {
         String chave = componente + regiao;
-        /*FIXME No java 8 get não retorna null e sim lança uma exception
-        	Use getOrDefault
-        	PS: se tivesse testado isso não conteceria :P
-        */
-        ComponenteRegiao componenteRegiao = componentesPorRegiaoMap.get(chave);
-        if (componenteRegiao == null) {
-            componenteRegiao = new ComponenteRegiao();
-            componenteRegiao.setComponente(componente);
-            componenteRegiao.setRegiao(regiao.name());
-            componenteRegiao.setQuatidadeAderente(aderente ? 1L : 0L);
-            componenteRegiao.setQuatidadeNaoAderente(!aderente ? 1L : 0L);
-            componentesPorRegiaoMap.put(chave, componenteRegiao);
-        } else {
-            componenteRegiao.setQuatidadeAderente(aderente ? componenteRegiao.getQuatidadeAderente()+1 : componenteRegiao.getQuatidadeAderente());
-            componenteRegiao.setQuatidadeNaoAderente(!aderente ? componenteRegiao.getQuatidadeNaoAderente()+1 : componenteRegiao.getQuatidadeNaoAderente());
-        }
+        ComponenteRegiao componenteRegiao = componentesPorRegiaoMap.getOrDefault(chave, criarComponente(componente, regiao, aderente));
+        componentesPorRegiaoMap.put(chave, componenteRegiao);
+        componenteRegiao.setQuatidadeAderente(aderente ? componenteRegiao.getQuatidadeAderente()+1 : componenteRegiao.getQuatidadeAderente());
+        componenteRegiao.setQuatidadeNaoAderente(!aderente ? componenteRegiao.getQuatidadeNaoAderente()+1 : componenteRegiao.getQuatidadeNaoAderente());
+    }
+
+    private ComponenteRegiao criarComponente(String componente, RegiaoEnum regiao, boolean aderente) {
+        ComponenteRegiao componenteRegiao = new ComponenteRegiao();
+        componenteRegiao.setComponente(componente);
+        componenteRegiao.setRegiao(regiao.name());
+        componenteRegiao.setQuatidadeAderente(aderente ? 1L : 0L);
+        componenteRegiao.setQuatidadeNaoAderente(!aderente ? 1L : 0L);
+        return componenteRegiao;
     }
 
     @Override

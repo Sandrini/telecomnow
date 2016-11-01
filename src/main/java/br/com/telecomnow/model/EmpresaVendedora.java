@@ -4,23 +4,31 @@ public class EmpresaVendedora {
 
     private String nome;
     private String site;
-    private Integer probabilidade;
+    private String imagem;
 
-    public EmpresaVendedora(String nome, Integer probabilidade, String site) {
+    private CategoriasEmpresasVendedoras categoria;
+
+    public EmpresaVendedora(String nome, CategoriasEmpresasVendedoras categoria, String site, String imagem) {
         this.nome = nome;
-        this.probabilidade = probabilidade;
+        this.categoria = categoria;
         this.site = site;
+        this.imagem = imagem;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public Integer getProbabilidade() {
-        return probabilidade;
-    }
 
     public String getSite() {
         return site;
+    }
+
+    public CategoriasEmpresasVendedoras getCategoria() {
+        return categoria;
+    }
+
+    public String getImagem() {
+        return imagem;
     }
 }
