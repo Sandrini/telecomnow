@@ -20,6 +20,9 @@ body {
 
 body {
 	margin: 0;
+	background: url(../img/team-photo.jpg) no-repeat fixed center;
+    background-attachment: fixed;
+    background-color: rgba(36, 36, 36, 0.8);
 }
 
 .container {
@@ -27,11 +30,11 @@ body {
 	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto;
-	background: url(../img/home.jpg) no-repeat center center;
 	padding: 0;
 	-webkit-background-size: cover;
 	background-size: cover;
 	height: auto;
+	
 }
 
 .container-fluid {
@@ -68,7 +71,7 @@ a {
 }
 
 .plano-fundo {
-	background-color: rgba(36, 36, 36, 0.8);
+	
 }
 
 .grafico {
@@ -80,7 +83,6 @@ a {
 .form-wrapper {
 	margin: 0 auto;
 	max-width: 750px;
-	height: 100%;
 	padding: 35px 0;
 	color: #D0CBCB;
 }

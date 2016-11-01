@@ -2,7 +2,7 @@ package br.com.telecomnow.model;
 
 public enum PerguntasEnum {
 
-	UNIDADE("Sua empresa possui, além da matriz, mais unidades (filiais)?", "TELEINTEGRACAO"),
+	UNIDADE("Sua empresa possui, além da matriz, mais unidades (filiais)?", "TELEATENDIMENTO"),
 	TELEATENDIMENTO("Há necessidade de inserir solução de teleatendimento (para call center ou sac), em sua empresa", "TELEINTEGRACAO"),
 	TELEINTEGRACAO("Deseja integração da solução de teleatendimento com seu sistema de gestão?", "CHAT"),
 	CHAT("Alem de atendimento via voz, sua demanda necessita de atendimento via CHAT?", "GRAVACAO"),
