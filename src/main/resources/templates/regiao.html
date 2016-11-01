@@ -1,0 +1,49 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Telecom Now</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/telecomnow.css"></link>
+	<link href='https://fonts.googleapis.com/css?family=Jockey+One' rel='stylesheet' type='text/css'></link>
+	<script type="text/javascript" src="js/telecomnow.js"></script>
+	<script type="text/javascript">
+		window.onload = clearControlVariables();
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+
+	<nav class="navbar">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+			&#10057; Telecom Now
+		</div>
+	  </div>
+	</nav>
+	
+	<!-- Container para as perguntas -->
+	<div class="container">
+		<div class="plano-fundo">
+			<div class="form-wrapper">
+
+				<!-- Cada elemento possui o id da pergunta atual e o id da proxima pergunta -->
+				<!-- Pergunta inicial exibida -->
+				
+				<form action="#" th:action="@{/regiao}" method="post" style="text-align: center;">
+					<div class="pergunta" style="text-align: center;" th:text="${pergunta}"></div>
+					<select name="regiao">
+					  <option 
+					  		  th:each="regiao : ${regioes}" 
+					          th:value="${regiao}" 
+					          th:text="${regiao.name()}"></option>
+					</select>
+					<div style="text-align: center;">
+						<button type="submit" name="resposta" class="btn">Enviar</button>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

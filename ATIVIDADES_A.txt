@@ -1,5 +1,5 @@
 1) Colocar pergunta de regiao
-2) Criar tela de exibir projeto
+2) Criar tela de exibir projeto 
 
 3) Armazenar respostas de perguntas (RS, ID_PERGUNTA, contador) 
 4) Criar tela de gráfico de respostas
@@ -16,4 +16,4 @@ EXTRAS:
 
 Elizeu atividades: 1, 2
 
-Leonardo: 3, 4
+Leonardo: 3, 4teste

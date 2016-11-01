@@ -1,28 +1,28 @@
 package br.com.telecomnow.model;
 
-/**
- * Created by Leonardo on 25/10/2016.
- */
 public class ComponenteRegiao {
 
-    private String componente;
-    private String regiao;
-    private Long quatidadeAderente;
-    private Long quatidadeNaoAderente;
-    
-    public void setComponente(String componente) {
+	private String componente;
+
+	private String regiao;
+
+	private Long quatidadeAderente;
+
+	private Long quatidadeNaoAderente;
+
+	public void setComponente(String componente) {
 		this.componente = componente;
 	}
-    
-    public void setRegiao(String regiao) {
+
+	public void setRegiao(String regiao) {
 		this.regiao = regiao;
 	}
-    
-    public void setQuatidadeAderente(Long quatidadeAderente) {
+
+	public void setQuatidadeAderente(Long quatidadeAderente) {
 		this.quatidadeAderente = quatidadeAderente;
 	}
-    
-    public void setQuatidadeNaoAderente(Long quatidadeNaoAderente) {
+
+	public void setQuatidadeNaoAderente(Long quatidadeNaoAderente) {
 		this.quatidadeNaoAderente = quatidadeNaoAderente;
 	}
 
@@ -41,7 +41,9 @@ public class ComponenteRegiao {
 	public Long getQuatidadeNaoAderente() {
 		return quatidadeNaoAderente;
 	}
-    
-    
+
+	public String gerarChave() {
+		return getComponente() + getRegiao();
+	}
 
 }

@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Telecom Now</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/telecomnow.css"></link>
+	<link href='https://fonts.googleapis.com/css?family=Jockey+One' rel='stylesheet' type='text/css'></link>
+	<script type="text/javascript" src="js/telecomnow.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+
+	<nav class="navbar">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+			&#10057; Telecom Now
+		</div>
+	  </div>
+	</nav>
+	
+	<!-- Container para as perguntas -->
+	<div class="container">
+		<div class="plano-fundo">
+			<div class="form-wrapper">
+
+				<div  th:each="graficoUrl : ${graficosUrls}" class="grafico">
+					<img alt="Google Pie Chart" th:src="${graficoUrl}" />
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

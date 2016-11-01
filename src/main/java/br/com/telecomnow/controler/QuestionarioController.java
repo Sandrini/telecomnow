@@ -3,39 +3,58 @@ package br.com.telecomnow.controler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.telecomnow.model.Pergunta;
-import br.com.telecomnow.repository.Perguntas;
+import br.com.telecomnow.model.RegiaoEnum;
+import br.com.telecomnow.repository.empresavendedora.EmpresaVendedoraRepository;
+import br.com.telecomnow.repository.questionario.QuestionarioRepository;
 
 @Controller
 public class QuestionarioController {
 
 	@Autowired
-	private Perguntas perguntas;
+	private QuestionarioRepository questionarioRepository;
+
+	@Autowired
+	private EmpresaVendedoraRepository empresaVendedoraRepository;
+
+	private Pergunta pergunta;
 	
-    @RequestMapping("/questionario")
-    public String getPergunta(
-    		@RequestParam(value="pergunta", required=false, defaultValue="UNIDADE") String identificador, 
-    		Model model
-    		) {
-    	model.addAttribute("pergunta", perguntas.buscarPergunta(identificador));
-        return "questionario";
+	@GetMapping({"regiao", "pergunta"})
+	public String atualizarEmOutrasPaginas() {
+		return "redirect:questionario";
+	}
+	
+    @GetMapping("/questionario")
+    public String iniciarQuestionario(Model model) {
+    	model.addAttribute("regioes", RegiaoEnum.values());
+    	model.addAttribute("pergunta", "Em qual região sua empresa se encontra?");
+        return "regiao";
     }
     
-    @RequestMapping(value = "/questionario", method={RequestMethod.POST}, params="sim")
-    public String responderSim(@ModelAttribute Pergunta pergunta, Model model) {
-    	model.addAttribute("pergunta", perguntas.buscarPergunta(pergunta.getProxima()));
-    	return "questionario";
+    @PostMapping(path = "/regiao")
+    public String responder(@RequestParam RegiaoEnum regiao, Model model) {
+    	questionarioRepository.definirRegiao(regiao);
+    	pergunta = questionarioRepository.buscarPergunta("UNIDADE");
+		model.addAttribute("pergunta", pergunta);
+    	return "pergunta";
     }
 
-    @RequestMapping(value = "/questionario", method={RequestMethod.POST}, params="nao")
-    public String responderNao(@ModelAttribute Pergunta pergunta, Model model) {
-    	model.addAttribute("pergunta", perguntas.buscarPergunta(pergunta.getProxima()));
-    	return "questionario";
+    @PostMapping("/pergunta")
+    public String responder(@RequestParam String resposta, Model model) {
+    	pergunta = questionarioRepository.armazenarRespostaParaPerguntaERetornarProximaPerguntaSeExistir(resposta, pergunta);
+		if(pergunta != null){
+    		model.addAttribute("pergunta", pergunta);
+    		return "pergunta";
+    	} else {
+			model.addAttribute("empresasVendedoras", empresaVendedoraRepository.sortearEmpresas());
+			model.addAttribute("imagemPath", questionarioRepository.buscarImagemDoProjeto());
+    		return "projeto";
+    	}
     }
 
 }
+	

@@ -2,7 +2,12 @@
 taregt
 target
 telecomnow.iml
+<<<<<<< HEAD
 .classpath
 .project
 bin
 .settings
+=======
+/.classpath
+/.project
+>>>>>>> 76a9dd27ad9a06da02a8b9e93a07ca5cbbb40a8a
