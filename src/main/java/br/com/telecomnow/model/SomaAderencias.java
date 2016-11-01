@@ -20,4 +20,8 @@ public class SomaAderencias {
     public Long getSomaNaoAderente() {
         return somaNaoAderente;
     }
+
+    public Long getSomaTotal() {
+        return getSomaAderente() + getSomaNaoAderente();
+    }
 }

@@ -52,6 +52,8 @@ public class QuestionarioController {
     	} else {
 			model.addAttribute("empresasVendedoras", empresaVendedoraRepository.sortearEmpresas());
 			model.addAttribute("imagemPath", questionarioRepository.buscarImagemDoProjeto());
+			model.addAttribute("chaveProjeto", questionarioRepository.buscarChaveProjeto());
+			model.addAttribute("detalhesProjeto", questionarioRepository.buscarDetalhamentoDoProjeto());
     		return "projeto";
     	}
     }

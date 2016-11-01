@@ -15,7 +15,7 @@ public class GraficoAderenciasTotalController {
     @Autowired
     private GraficoAderenciaTotalBuilder construtorGraficoDemanda;
 
-    @RequestMapping(value = "/graficoAderenciaTotal")
+    @RequestMapping(value = "/graficoaderenciatotal")
     public String grafico(Model model) {
         List<String> graficos = new ArrayList<>();
         String urlImgGrafico = construtorGraficoDemanda.build();

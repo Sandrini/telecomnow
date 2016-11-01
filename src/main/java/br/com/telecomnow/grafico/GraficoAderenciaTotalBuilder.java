@@ -22,11 +22,13 @@ public class GraficoAderenciaTotalBuilder {
         List<Integer> somatorioComAderencia = new ArrayList<>();
         List<Integer> somatorioSemAderencia = new ArrayList<>();
 
+        int maxSoma=0;
         for (PerguntasEnum perguntasEnum : PerguntasEnum.values()) {
             nomesDeComponentes.add(perguntasEnum.getIdentificador());
             SomaAderencias aderencias = repostaRepository.somarAderencias(perguntasEnum.getIdentificador());
             somatorioComAderencia.add(aderencias.getSomaAderente().intValue());
             somatorioSemAderencia.add(aderencias.getSomaNaoAderente().intValue());
+            maxSoma =  aderencias.getSomaTotal() > maxSoma ? aderencias.getSomaTotal().intValue() : maxSoma;
         }
         BarChartPlot comAderencia= Plots.newBarChartPlot(Data.newData(somatorioSemAderencia), Color.newColor("19194d"),"COM ADERENCIA");
         BarChartPlot semAderencia=Plots.newBarChartPlot(Data.newData(somatorioComAderencia),Color.newColor("8c8cd9"),"SEM ADERENCIA");
@@ -39,7 +41,7 @@ public class GraficoAderenciaTotalBuilder {
         chart.addXAxisLabels(AxisLabelsFactory.newAxisLabels(nomesDeComponentes));
 
         //Adicionado labels no vetor de solicitacoes
-        chart.addYAxisLabels(AxisLabelsFactory.newNumericRangeAxisLabels(0,10000));
+        chart.addYAxisLabels(AxisLabelsFactory.newNumericRangeAxisLabels(0,maxSoma));
 
         //definindo o vetor Y
         AxisLabels solicitacoes=AxisLabelsFactory.newAxisLabels("Solicitações",50.0);
@@ -55,7 +57,7 @@ public class GraficoAderenciaTotalBuilder {
         chart.setBarWidth(100);
         chart.setSpaceWithinGroupsOfBars(20);
         chart.setDataStacked(true);
-        chart.setTitle("Demandas de componentes",Color.BLACK,24);
+        chart.setTitle("Aderencia total de componentes",Color.BLACK,24);
         chart.setGrid(100,10,3,2);
         chart.setBackgroundFill(Fills.newSolidFill(Color.ALICEBLUE));
         LinearGradientFill fill=Fills.newLinearGradientFill(0,Color.LAVENDER,100);

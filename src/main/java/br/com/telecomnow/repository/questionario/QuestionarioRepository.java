@@ -17,4 +17,7 @@ public interface QuestionarioRepository {
 
 	void definirRegiao(RegiaoEnum regiao);
 
+    String buscarChaveProjeto();
+
+	Collection<String> buscarDetalhamentoDoProjeto();
 }

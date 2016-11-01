@@ -1,19 +1,29 @@
-1) Colocar pergunta de regiao
-2) Criar tela de exibir projeto 
+FALTANDO:
 
-3) Armazenar respostas de perguntas (RS, ID_PERGUNTA, contador) 
-4) Criar tela de gráfico de respostas
 
-5) Colocar na tela de exibicao de projeto as empresas
-5.1) Criar enum de cadastro de empresas
-5.2) Criar algoritmo de selecao de empresas baseado em cadastro
+- Elizeu: ajustar CSS pagina projeto
+-- explicação projeto e componentes na pagina de projeto
+-- empresas vendedoras no projeto final
+-- botão de download
+
+- Sandrini: Cadastrar/Ajustar as empresas vendedoras corretas
+- Sandrini: Cadastrar/Ajustar a explicação dos componentes
+
+
 
 EXTRAS:
-6) Incorporar banco de dados
-7) Bonus: Criar tela de cadastro de empresas
-8) Super bonus: criar tela de castro de perguntas
+- Incorporar banco de dados
+- Bonus: Criar tela de cadastro de empresas
+- Super bonus: criar tela de castro de perguntas
 
 
-Elizeu atividades: 1, 2
+FEITAS:
+- Colocar pergunta de regiao
+- Criar tela de exibir projeto
 
-Leonardo: 3, 4teste
+- Armazenar respostas de perguntas (RS, ID_PERGUNTA, contador)
+4) Criar tela de gráfico de respostas
+
+- Colocar na tela de exibicao de projeto as empresas
+-- Criar enum de cadastro de empresas
+-- Criar algoritmo de selecao de empresas baseado em cadastro

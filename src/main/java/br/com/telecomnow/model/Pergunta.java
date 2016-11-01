@@ -8,13 +8,16 @@ public class Pergunta {
 
 	private String mensagem;
 
+	private String detalhamento;
+
 	public Pergunta() {
 	}
 
-	public Pergunta(String identificador, String proxima, String mensagem) {
+	public Pergunta(String identificador, String proxima, String mensagem, String detalhamento) {
 		this.identificador = identificador;
 		this.proxima = proxima;
 		this.mensagem = mensagem;
+		this.detalhamento = detalhamento;
 	}
 
 	public String getIdentificador() {
@@ -43,6 +46,10 @@ public class Pergunta {
 
 	public boolean possuiProximaPergunta() {
 		return proxima != null && !proxima.isEmpty();
+	}
+
+	public String getDetalhamento() {
+		return detalhamento;
 	}
 
 	@Override

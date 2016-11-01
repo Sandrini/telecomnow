@@ -16,12 +16,12 @@ public class GraficoAderenciaRegiaoController {
     @Autowired
     private GraficoAderenciaRegiaoBuilder graficoAderenciaRegiaoBuilder;
 
-    @RequestMapping(value = "/graficoAderenciaRegiao")
+    @RequestMapping(value = "/graficoaderenciaregiao")
     public String grafico(Model model) {
         List<String> graficos = new ArrayList<>();
-        graficos.add(graficoAderenciaRegiaoBuilder.build(PerguntasEnum.CHAT.getIdentificador()));
-        graficos.add(graficoAderenciaRegiaoBuilder.build(PerguntasEnum.GRAVACAO.getIdentificador()));
-        graficos.add(graficoAderenciaRegiaoBuilder.build(PerguntasEnum.CELULAR.getIdentificador()));
+        for (PerguntasEnum pergunta : PerguntasEnum.values()) {
+            graficos.add(graficoAderenciaRegiaoBuilder.build(pergunta.getIdentificador()));
+        }
         model.addAttribute("graficosUrls", graficos);
         return "graficoAderenciaRegiao";
     }

@@ -13,37 +13,51 @@
 </head>
 <body>
 
-	<nav class="navbar">
-	  <div class="container-fluid">
+<nav class="navbar">
+	<div class="container-fluid">
 		<div class="navbar-header">
 			&#10057; Telecom Now
 		</div>
-	  </div>
-	</nav>
-	
-	<!-- Container para as perguntas -->
-	<div class="container">
-		<div class="plano-fundo">
-			<div class="form-wrapper">
+	</div>
+</nav>
 
-				<!-- Bloco de imagens com os projetos finais -->
-				<div class="projeto-final" th:if="${imagemPath == null}">
-					<div>
-						<p>N&atilde;o foi encontrado um projeto com as condi&ccedil;&otilde;es informadas</p>
-					</div>
+<!-- Container para as perguntas -->
+<div class="container">
+	<div class="plano-fundo">
+		<div class="form-wrapper">
+
+			<!-- Bloco de imagens com os projetos finais -->
+			<div class="projeto-final" th:if="${imagemPath == null}">
+				<div>
+					<p>N&atilde;o foi encontrado um projeto com as condi&ccedil;&otilde;es informadas chave: </p>
+					<p th:text="${chaveProjeto}"></p>
 				</div>
-				
-				<div class="projeto-final" th:unless="${imagemPath == null}">
-					<img th:src="${imagemPath}" border="0" /> 
-					<div>
-						<a th:href="${imagemPath}" onclick="downloadImg(this)" >Clique para baixar o projeto</a>
-					</div>
+			</div>
+
+			<div class="projeto-final" th:unless="${imagemPath == null}">
+				<img th:src="${imagemPath}" border="0" />
+				<div>
+					<a th:href="${imagemPath}" onclick="downloadImg(this)" >Clique para baixar o projeto</a>
 				</div>
-				<div style="text-align: center;">
-					<a id="back" href="/questionario" class="btn">Refazer</a>
+			</div>
+			<div>
+				<p>Baseado nas suas respostas, foi montado um projeto com os seguintes componentes: </p>
+				<ul th:each="detalhe : ${detalhesProjeto}">
+					<li th:text="${detalhe}"/>
+				</ul>
+			</div>
+			<div>
+				<p>Abaixo segue a recomendação de empresas que operam com essa necessidade</p>
+				<div  th:each="empresa : ${empresasVendedoras}">
+					<img alt="${empresa.nome}" th:src="${empresa.imagem}" class="imagem-projeto"/>
+					<a th:href="${imagemPath}" th:text="${empresa.nome}"/>
 				</div>
+			</div>
+			<div style="text-align: center;">
+				<a id="back" href="/questionario" class="btn">Refazer</a>
 			</div>
 		</div>
 	</div>
+</div>
 </body>
 </html>

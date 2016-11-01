@@ -37,7 +37,7 @@ public class QuestionarioControlerTest {
     @Test
     public void testaGetParaPrimeiraPergunta() throws Exception {
         given(perguntas.buscarPergunta("UNIDADE"))
-                .willReturn(new Pergunta("UNIDADE", "PROXIMA-PERGUNTA-IDENTIFICADOR", "La Pergunta?"));
+                .willReturn(new Pergunta("UNIDADE", "PROXIMA-PERGUNTA-IDENTIFICADOR", "La Pergunta?", "lo detalhamento"));
 
         mvc.perform(get("/questionario").accept(TEXT_PLAIN))
                 .andExpect(status().isOk())

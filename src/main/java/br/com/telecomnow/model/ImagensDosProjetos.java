@@ -3,7 +3,6 @@ package br.com.telecomnow.model;
 import static java.util.Arrays.stream;
 
 public enum ImagensDosProjetos {
-
 	Projeto1(""),
 	Projeto2("TELEATENDIMENTO+"),
 	Projeto3("TELEATENDIMENTO+CHAT+CELULAR+"),

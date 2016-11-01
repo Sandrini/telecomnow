@@ -20,7 +20,7 @@ body {
 
 body {
 	margin: 0;
-	background: url(../img/team-photo.jpg) no-repeat fixed center;
+	background: url(../img/cropped-Site-Background.jpeg) no-repeat fixed center;
     background-attachment: fixed;
     background-color: rgba(36, 36, 36, 0.8);
 }
@@ -34,7 +34,7 @@ body {
 	-webkit-background-size: cover;
 	background-size: cover;
 	height: auto;
-	
+
 }
 
 .container-fluid {
@@ -72,6 +72,11 @@ a {
 
 .plano-fundo {
 	
+}
+
+.imagem-projeto {
+    width:50px;
+    height:30px
 }
 
 .grafico {

@@ -21,7 +21,7 @@ public class SorteioEmpresaVendedorasService {
     }
 
     public Collection<EmpresaVendedora> sortear() {
-        Collection<EmpresaVendedora> empresasSorteadas = new ArrayList<>();
+        Set<EmpresaVendedora> empresasSorteadas = new HashSet<>();
         while (empresasSorteadas.size() < 3) {
             int sorteioCategoria = new Random().nextInt(100);
             if (sorteioCategoria <= 10 && emprestasPorCategoriaMap.containsKey(CategoriasEmpresasVendedoras.SILVER)){

@@ -1,8 +1,10 @@
 package br.com.telecomnow.repository.questionario;
 
 import static br.com.telecomnow.model.PerguntasEnum.CELULAR;
+import static br.com.telecomnow.model.PerguntasEnum.TELEATENDIMENTO;
 import static br.com.telecomnow.model.PerguntasEnum.TELEINTEGRACAO;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,10 +28,13 @@ public class QuestionarioEmMemoria implements QuestionarioRepository {
 
 	private StringBuffer respostasBuffer;
 
+	private Collection<String> detalhesProjeto;
+
 	private RegiaoEnum regiao;
 
 	public QuestionarioEmMemoria() {
-		respostasBuffer = new StringBuffer();
+		inicializarBuffersDeSessao();
+
 		perguntasPorIdentificador = new HashMap<>();
 
 		for (PerguntasEnum perguntaEnum : PerguntasEnum.values()) {
@@ -37,9 +42,15 @@ public class QuestionarioEmMemoria implements QuestionarioRepository {
 					new Pergunta(
 							perguntaEnum.getIdentificador(),
 							perguntaEnum.getProxima(), 
-							perguntaEnum.getMensagem()
+							perguntaEnum.getMensagem(),
+							perguntaEnum.getDetalhamento()
 							));
 		}
+	}
+
+	private void inicializarBuffersDeSessao() {
+		respostasBuffer = new StringBuffer();
+		detalhesProjeto = new ArrayList<>();
 	}
 
 	@Override
@@ -54,7 +65,18 @@ public class QuestionarioEmMemoria implements QuestionarioRepository {
 
 	@Override
 	public void definirRegiao(RegiaoEnum regiao) {
+		inicializarBuffersDeSessao();
 		this.regiao = regiao;
+	}
+
+	@Override
+	public String buscarChaveProjeto() {
+		return respostasBuffer.toString();
+	}
+
+	@Override
+	public Collection<String> buscarDetalhamentoDoProjeto() {
+		return detalhesProjeto;
 	}
 
 	@Override
@@ -65,16 +87,17 @@ public class QuestionarioEmMemoria implements QuestionarioRepository {
 			respostasBuffer
 				.append(pergunta.getIdentificador())
 				.append("+");
+			detalhesProjeto.add(pergunta.getDetalhamento());
 		}
-		if (!aderente && aPerguntaEhTeleintegracao(pergunta)) {
+		if (!aderente && aPerguntaEhTeleatendimento(pergunta)) {
 			return buscarPergunta(CELULAR.getIdentificador());
 		} else{
 			return buscarPergunta(pergunta.getProxima());
 		}
 	}
 
-	private boolean aPerguntaEhTeleintegracao(Pergunta pergunta) {
-		return TELEINTEGRACAO.getIdentificador().equals(pergunta.getIdentificador());
+	private boolean aPerguntaEhTeleatendimento(Pergunta pergunta) {
+		return TELEATENDIMENTO.getIdentificador().equals(pergunta.getIdentificador());
 	}
 
 	@Override
