@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="page">
+<head>
+	<title>Telecom Now</title>
+
+	<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+
+	<link href='https://fonts.googleapis.com/css?family=Jockey+One' rel='stylesheet' type='text/css'></link>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/telecomnow.css"></link>
+</head>
+<body>
+	
+	<nav th:replace="fragmentos :: navbar"></nav>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div th:include="this :: content" ></div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/telecomnow.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	
+</body>
+</html>

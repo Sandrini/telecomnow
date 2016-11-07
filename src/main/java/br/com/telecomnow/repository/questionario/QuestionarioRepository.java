@@ -2,6 +2,7 @@ package br.com.telecomnow.repository.questionario;
 
 import java.util.Collection;
 
+import br.com.telecomnow.model.Detalhamento;
 import br.com.telecomnow.model.Pergunta;
 import br.com.telecomnow.model.RegiaoEnum;
 
@@ -19,5 +20,5 @@ public interface QuestionarioRepository {
 
     String buscarChaveProjeto();
 
-	Collection<String> buscarDetalhamentoDoProjeto();
+	Collection<Detalhamento> buscarDetalhamentoDoProjeto();
 }

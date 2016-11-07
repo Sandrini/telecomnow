@@ -8,12 +8,12 @@ public class Pergunta {
 
 	private String mensagem;
 
-	private String detalhamento;
+	private Detalhamento detalhamento;
 
 	public Pergunta() {
 	}
 
-	public Pergunta(String identificador, String proxima, String mensagem, String detalhamento) {
+	public Pergunta(String identificador, String proxima, String mensagem, Detalhamento detalhamento) {
 		this.identificador = identificador;
 		this.proxima = proxima;
 		this.mensagem = mensagem;
@@ -48,7 +48,7 @@ public class Pergunta {
 		return proxima != null && !proxima.isEmpty();
 	}
 
-	public String getDetalhamento() {
+	public Detalhamento getDetalhamento() {
 		return detalhamento;
 	}
 

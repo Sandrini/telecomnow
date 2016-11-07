@@ -2,21 +2,21 @@ package br.com.telecomnow.repository.questionario;
 
 import static br.com.telecomnow.model.PerguntasEnum.CELULAR;
 import static br.com.telecomnow.model.PerguntasEnum.TELEATENDIMENTO;
-import static br.com.telecomnow.model.PerguntasEnum.TELEINTEGRACAO;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import br.com.telecomnow.model.ImagensDosProjetos;
-import br.com.telecomnow.model.PerguntasEnum;
-import br.com.telecomnow.model.RegiaoEnum;
-import br.com.telecomnow.repository.component.ComponentePorRegiaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import br.com.telecomnow.model.Detalhamento;
+import br.com.telecomnow.model.ImagensDosProjetos;
 import br.com.telecomnow.model.Pergunta;
+import br.com.telecomnow.model.PerguntasEnum;
+import br.com.telecomnow.model.RegiaoEnum;
+import br.com.telecomnow.repository.component.ComponentePorRegiaoRepository;
 
 @Repository
 public class QuestionarioEmMemoria implements QuestionarioRepository {
@@ -28,7 +28,7 @@ public class QuestionarioEmMemoria implements QuestionarioRepository {
 
 	private StringBuffer respostasBuffer;
 
-	private Collection<String> detalhesProjeto;
+	private Collection<Detalhamento> detalhesProjeto;
 
 	private RegiaoEnum regiao;
 
@@ -75,7 +75,7 @@ public class QuestionarioEmMemoria implements QuestionarioRepository {
 	}
 
 	@Override
-	public Collection<String> buscarDetalhamentoDoProjeto() {
+	public Collection<Detalhamento> buscarDetalhamentoDoProjeto() {
 		return detalhesProjeto;
 	}
 

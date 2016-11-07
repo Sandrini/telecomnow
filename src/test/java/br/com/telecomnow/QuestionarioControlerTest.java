@@ -18,6 +18,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import br.com.telecomnow.controler.QuestionarioController;
+import br.com.telecomnow.model.Detalhamento;
 import br.com.telecomnow.model.Pergunta;
 
 @RunWith(SpringRunner.class)
@@ -37,7 +38,7 @@ public class QuestionarioControlerTest {
     @Test
     public void testaGetParaPrimeiraPergunta() throws Exception {
         given(perguntas.buscarPergunta("UNIDADE"))
-                .willReturn(new Pergunta("UNIDADE", "PROXIMA-PERGUNTA-IDENTIFICADOR", "La Pergunta?", "lo detalhamento"));
+                .willReturn(new Pergunta("UNIDADE", "PROXIMA-PERGUNTA-IDENTIFICADOR", "La Pergunta?", new Detalhamento("componente", "lo detalhamento")));
 
         mvc.perform(get("/questionario").accept(TEXT_PLAIN))
                 .andExpect(status().isOk())
